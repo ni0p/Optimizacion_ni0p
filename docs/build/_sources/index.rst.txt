@@ -10,7 +10,8 @@ Welcome to Optimizacion_ni0p's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   Optimizacion_ni0p
+
+   Optimizacion-ni0p
 
 
 
