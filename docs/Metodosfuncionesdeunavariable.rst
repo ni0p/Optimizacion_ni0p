@@ -1,13 +1,13 @@
-Metodosfuncionesdeunavariable package
+Metodos funciones de una variable 
 =====================================
 
-.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable
+.. automodule:: Metodosfuncionesdeunavariable
    :members:
    :undoc-members:
    :show-inheritance:
 
 
-Subpackages
+Subpaquete
 -----------
 
 .. toctree::
@@ -16,29 +16,21 @@ Subpackages
    Metodosfuncionesdeunavariable.Metodosbasadosderivada
    Metodosfuncionesdeunavariable.Metodoseliminacionregiones
 
-Submodules
+Submodulos
 ----------
 
-Metodosfuncionesdeunavariable.busqueda\_exhaustiva module
+busqueda_exhaustiva
 ---------------------------------------------------------
 
-.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.busqueda_exhaustiva
+.. automodule:: Metodosfuncionesdeunavariable.busqueda_exhaustiva
    :members:
    :undoc-members:
    :show-inheritance:
 
-Metodosfuncionesdeunavariable.interval\_halving\_method module
+interval_halving_method
 --------------------------------------------------------------
 
-.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.interval_halving_method
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: Metodosfuncionesdeunavariable
+.. automodule:: Metodosfuncionesdeunavariable.interval_halving_method
    :members:
    :undoc-members:
    :show-inheritance:

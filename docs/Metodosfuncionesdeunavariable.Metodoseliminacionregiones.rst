@@ -1,10 +1,10 @@
-Metodosfuncionesdeunavariable.Metodoseliminacionregiones package
+Metodos funciones de una variable - Metodos eliminacion de regiones 
 ================================================================
 
-Submodules
+Submodulos
 ----------
 
-Metodosfuncionesdeunavariable.Metodoseliminacionregiones.bounding\_phase\_method module
+bounding_phase_method
 ---------------------------------------------------------------------------------------
 
 .. automodule:: Metodosfuncionesdeunavariable.Metodoseliminacionregiones.bounding_phase_method
@@ -12,7 +12,7 @@ Metodosfuncionesdeunavariable.Metodoseliminacionregiones.bounding\_phase\_method
    :undoc-members:
    :show-inheritance:
 
-Metodosfuncionesdeunavariable.Metodoseliminacionregiones.fibonacci module
+fibonacci
 -------------------------------------------------------------------------
 
 .. automodule:: Metodosfuncionesdeunavariable.Metodoseliminacionregiones.fibonacci
@@ -20,18 +20,10 @@ Metodosfuncionesdeunavariable.Metodoseliminacionregiones.fibonacci module
    :undoc-members:
    :show-inheritance:
 
-Metodosfuncionesdeunavariable.Metodoseliminacionregiones.golden\_search\_method module
+golden_search_method
 --------------------------------------------------------------------------------------
 
 .. automodule:: Metodosfuncionesdeunavariable.Metodoseliminacionregiones.golden_search_method
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: Metodosfuncionesdeunavariable.Metodoseliminacionregiones
    :members:
    :undoc-members:
    :show-inheritance:

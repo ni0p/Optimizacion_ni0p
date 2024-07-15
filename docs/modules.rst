@@ -7,4 +7,4 @@ Optimizacionn
 
    Metodosfuncionesdeunavariable
    introduccion
-   setup
+   Metodosparafuncionesmultivariadas

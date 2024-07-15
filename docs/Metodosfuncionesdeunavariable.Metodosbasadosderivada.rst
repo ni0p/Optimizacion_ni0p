@@ -1,10 +1,10 @@
-Metodosfuncionesdeunavariable.Metodosbasadosderivada package
+Metodos funciones de una variable - Metodos basados en la derivada
 ============================================================
 
-Submodules
+Submodulos
 ----------
 
-Metodosfuncionesdeunavariable.Metodosbasadosderivada.biseccion module
+biseccion
 ---------------------------------------------------------------------
 
 .. automodule:: Metodosfuncionesdeunavariable.Metodosbasadosderivada.biseccion
@@ -12,7 +12,7 @@ Metodosfuncionesdeunavariable.Metodosbasadosderivada.biseccion module
    :undoc-members:
    :show-inheritance:
 
-Metodosfuncionesdeunavariable.Metodosbasadosderivada.newton\_rhapson module
+newton_rhapson
 ---------------------------------------------------------------------------
 
 .. automodule:: Metodosfuncionesdeunavariable.Metodosbasadosderivada.newton_rhapson
@@ -20,18 +20,10 @@ Metodosfuncionesdeunavariable.Metodosbasadosderivada.newton\_rhapson module
    :undoc-members:
    :show-inheritance:
 
-Metodosfuncionesdeunavariable.Metodosbasadosderivada.secante module
+secante
 -------------------------------------------------------------------
 
 .. automodule:: Metodosfuncionesdeunavariable.Metodosbasadosderivada.secante
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-Module contents
----------------
-
-.. automodule:: Metodosfuncionesdeunavariable.Metodosbasadosderivada
    :members:
    :undoc-members:
    :show-inheritance:

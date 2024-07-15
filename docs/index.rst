@@ -10,9 +10,7 @@ Bienvenidos a la documentation de Optimizacion!
    :maxdepth: 2
    :caption: Contents:
 
-   introduccion
-   Metodosfuncionesdeunavariable
-   modules
+   Optimizacionn
 
 
 
