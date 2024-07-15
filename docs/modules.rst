@@ -1,7 +1,9 @@
-Optimizacion-ni0p
-=================
+Optimizacionn
+=============
 
 .. toctree::
    :maxdepth: 4
 
-   Optimizacion-ni0p
+   Metodosfuncionesdeunavariable
+   introduccion
+   setup
