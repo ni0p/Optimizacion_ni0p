@@ -8,3 +8,4 @@ Optimizacionn
    Metodosfuncionesdeunavariable
    introduccion
    Metodosparafuncionesmultivariadas
+   Optimizacionn

@@ -1,7 +1,7 @@
 Introduccion
 ====================
 
-.. automodule:: introduccion
+.. automodule:: Optimizacionn.introduccion
     :members:
     :undoc-members:
     :show-inheritance:
@@ -13,7 +13,7 @@ Submodulos
 caja
 ------------------------
 
-.. automodule:: introduccion.caja
+.. automodule:: Optimizacionn.introduccion.caja
    :members:
    :undoc-members:
    :show-inheritance:
@@ -21,7 +21,7 @@ caja
 cerca
 -------------------------
 
-.. automodule:: introduccion.cerca
+.. automodule:: Optimizacionn.introduccion.cerca
    :members:
    :undoc-members:
    :show-inheritance:
@@ -29,7 +29,7 @@ cerca
 lata
 ------------------------
 
-.. automodule:: introduccion.lata
+.. automodule:: Optimizacionn.introduccion.lata
    :members:
    :undoc-members:
    :show-inheritance:
@@ -37,7 +37,7 @@ lata
 latax2
 --------------------------
 
-.. automodule:: introduccion.latax2
+.. automodule:: Optimizacionn.introduccion.latax2
    :members:
    :undoc-members:
    :show-inheritance:

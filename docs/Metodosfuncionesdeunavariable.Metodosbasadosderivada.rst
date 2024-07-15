@@ -7,7 +7,7 @@ Submodulos
 biseccion
 ---------------------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.Metodosbasadosderivada.biseccion
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.Metodosbasadosderivada.biseccion
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ biseccion
 newton_rhapson
 ---------------------------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.Metodosbasadosderivada.newton_rhapson
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.Metodosbasadosderivada.newton_rhapson
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ newton_rhapson
 secante
 -------------------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.Metodosbasadosderivada.secante
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.Metodosbasadosderivada.secante
    :members:
    :undoc-members:
    :show-inheritance:

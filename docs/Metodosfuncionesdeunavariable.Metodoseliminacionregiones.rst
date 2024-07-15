@@ -7,7 +7,7 @@ Submodulos
 bounding_phase_method
 ---------------------------------------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.Metodoseliminacionregiones.bounding_phase_method
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.Metodoseliminacionregiones.bounding_phase_method
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +15,7 @@ bounding_phase_method
 fibonacci
 -------------------------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.Metodoseliminacionregiones.fibonacci
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.Metodoseliminacionregiones.fibonacci
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +23,7 @@ fibonacci
 golden_search_method
 --------------------------------------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.Metodoseliminacionregiones.golden_search_method
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.Metodoseliminacionregiones.golden_search_method
    :members:
    :undoc-members:
    :show-inheritance:

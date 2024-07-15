@@ -1,7 +1,7 @@
 Metodos funciones de una variable 
 =====================================
 
-.. automodule:: Metodosfuncionesdeunavariable
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable
    :members:
    :undoc-members:
    :show-inheritance:
@@ -22,7 +22,7 @@ Submodulos
 busqueda_exhaustiva
 ---------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.busqueda_exhaustiva
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.busqueda_exhaustiva
    :members:
    :undoc-members:
    :show-inheritance:
@@ -30,7 +30,7 @@ busqueda_exhaustiva
 interval_halving_method
 --------------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.interval_halving_method
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.interval_halving_method
    :members:
    :undoc-members:
    :show-inheritance:
