@@ -1,6 +1,12 @@
 Metodosfuncionesdeunavariable package
 =====================================
 
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
 Subpackages
 -----------
 
@@ -16,7 +22,7 @@ Submodules
 Metodosfuncionesdeunavariable.busqueda\_exhaustiva module
 ---------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.busqueda_exhaustiva
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.busqueda_exhaustiva
    :members:
    :undoc-members:
    :show-inheritance:
@@ -24,7 +30,7 @@ Metodosfuncionesdeunavariable.busqueda\_exhaustiva module
 Metodosfuncionesdeunavariable.interval\_halving\_method module
 --------------------------------------------------------------
 
-.. automodule:: Metodosfuncionesdeunavariable.interval_halving_method
+.. automodule:: Optimizacionn.Metodosfuncionesdeunavariable.interval_halving_method
    :members:
    :undoc-members:
    :show-inheritance:

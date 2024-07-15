@@ -1,13 +1,19 @@
 introduccion package
 ====================
 
+.. automodule:: Optimizacionn.introduccion
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+
 Submodules
 ----------
 
 introduccion.caja module
 ------------------------
 
-.. automodule:: introduccion.caja
+.. automodule:: Optimizacionn.introduccion.caja
    :members:
    :undoc-members:
    :show-inheritance:
@@ -15,7 +21,7 @@ introduccion.caja module
 introduccion.cerca module
 -------------------------
 
-.. automodule:: introduccion.cerca
+.. automodule:: Optimizacionn.introduccion.cerca
    :members:
    :undoc-members:
    :show-inheritance:
@@ -23,7 +29,7 @@ introduccion.cerca module
 introduccion.lata module
 ------------------------
 
-.. automodule:: introduccion.lata
+.. automodule:: Optimizacionn.introduccion.lata
    :members:
    :undoc-members:
    :show-inheritance:
@@ -31,7 +37,7 @@ introduccion.lata module
 introduccion.latax2 module
 --------------------------
 
-.. automodule:: introduccion.latax2
+.. automodule:: Optimizacionn.introduccion.latax2
    :members:
    :undoc-members:
    :show-inheritance:

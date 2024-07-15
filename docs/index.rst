@@ -11,10 +11,8 @@ Bienvenidos a la documentation de Optimizacion!
    :caption: Contents:
 
    introduccion
-   Metodoseliminacionregiones
    Metodosfuncionesdeunavariable
-   Optimizacioon
-   Optimizacionn
+   modules
 
 
 
