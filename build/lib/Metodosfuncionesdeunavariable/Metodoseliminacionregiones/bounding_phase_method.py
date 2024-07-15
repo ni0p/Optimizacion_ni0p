@@ -2,25 +2,106 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 def linspace(start, stop, step=0.05):
+    """
+    Genera un arreglo espaciado uniformemente entre `start` y `stop`.
+
+    Parámetros:
+    start : float
+        Valor inicial del arreglo.
+    stop : float
+        Valor final del arreglo.
+    step : float, opcional
+        Tamaño del paso entre valores. Por defecto es 0.05.
+
+    Retorna:
+    numpy.ndarray
+        Arreglo de valores espaciados uniformemente.
+    """
     return np.linspace(start, stop, int((stop - start) / step + 1))
 
 def caja(l):
-    return -1*(4*(l)**3 - 60*(l)**2 + 200*l)
+    """
+    Calcula la función de costo asociada a una caja.
+
+    Parámetros:
+    l : float
+        Longitud de un lado de la caja.
+
+    Retorna:
+    float
+        Valor de la función de costo para la caja.
+    """
+    return -1 * (4 * (l)**3 - 60 * (l)**2 + 200 * l)
 
 def lata(r):
-    return 2 * np.pi * (r**2)  + 500/r
+    """
+    Calcula la función de costo asociada a una lata.
+
+    Parámetros:
+    r : float
+        Radio de la lata.
+
+    Retorna:
+    float
+        Valor de la función de costo para la lata.
+    """
+    return 2 * np.pi * (r**2) + 500 / r
 
 def f1(x):
-    return ((x)**2) + 54/x
+    """
+    Evalúa la primera función f1(x).
+
+    Parámetros:
+    x : float
+        Valor de la variable x.
+
+    Retorna:
+    float
+        Resultado de evaluar la función f1 en x.
+    """
+    return (x**2) + 54 / x
 
 def f2(x):
-    return ((x)**3) + (2*(x)) - 3
+    """
+    Evalúa la segunda función f2(x).
+
+    Parámetros:
+    x : float
+        Valor de la variable x.
+
+    Retorna:
+    float
+        Resultado de evaluar la función f2 en x.
+    """
+    return (x**3) + (2 * x) - 3
 
 def f3(x):
-    return ((x)**4) + ((x)**2) - 33
+    """
+    Evalúa la tercera función f3(x).
+
+    Parámetros:
+    x : float
+        Valor de la variable x.
+
+    Retorna:
+    float
+        Resultado de evaluar la función f3 en x.
+    """
+    return (x**4) + (x**2) - 33
 
 def f4(x):
-    return (3*((x)**4)) - (8*((x)**3)) - (6*((x)**2)) + 12*(x)
+    """
+    Evalúa la cuarta función f4(x).
+
+    Parámetros:
+    x : float
+        Valor de la variable x.
+
+    Retorna:
+    float
+        Resultado de evaluar la función f4 en x.
+    """
+    return 3 * (x**4) - 8 * (x**3) - 6 * (x**2) + 12 * x
 
 #Función creada para crear los arreglos de acuerdo a los límites dados en la clase para cada función
 
@@ -32,20 +113,35 @@ lim_f2 = linspace(0, 5)
 lim_f3 = linspace(-2.5, 2.5)
 lim_f4 = linspace(-1.5, 3)
 
-def bounding_p_m(x,delta, funcion):
-    k=0
+def bounding_p_m(x, delta, funcion):
+    """
+    Encuentra un intervalo donde una función es mínima dentro de un delta dado.
+
+    Parámetros:
+    x : float
+        Punto inicial para buscar mínimo local.
+    delta : float
+        Tamaño del paso para la búsqueda.
+    funcion : callable
+        Función a evaluar.
+
+    Retorna:
+    tuple
+        Tupla con los extremos del intervalo donde se encuentra el mínimo local.
+    """
+    k = 0
     if funcion(x - abs(delta)) >= funcion(x) >= funcion(x + abs(delta)):
-        deltaa= delta
-    elif funcion(x - abs(delta))<= funcion(x) <= funcion(x + abs(delta)):
-        deltaa= -delta
-    x1= x + (2**(k))*deltaa
-    x_anterior= x #para asegurar el ultimo punto que no se pasó
+        deltaa = delta
+    elif funcion(x - abs(delta)) <= funcion(x) <= funcion(x + abs(delta)):
+        deltaa = -delta
+    x1 = x + (2 ** (k)) * deltaa
+    x_anterior = x  # para asegurar el último punto que no se pasó
     while funcion(x1) < funcion(x):
-        k=k+1
-        x_anterior= x  
-        x= x1
+        k += 1
+        x_anterior = x
+        x = x1
         x1 = x + (2 ** k) * deltaa
-        
+
     return x_anterior, x1
 
 print(bounding_p_m(0.6,0.5,f1))

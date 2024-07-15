@@ -2,38 +2,134 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 def linspace(start, stop, step=0.05):
+    """
+    Genera un arreglo espaciado uniformemente entre start y stop con el paso especificado.
+
+    Args:
+    - start (float): Valor inicial del arreglo.
+    - stop (float): Valor final del arreglo.
+    - step (float, opcional): Paso entre cada punto del arreglo. Por defecto es 0.05.
+
+    Returns:
+    - numpy.ndarray: Arreglo de valores espaciados uniformemente.
+    """
     return np.linspace(start, stop, int((stop - start) / step + 1))
 
-#Basadas en Central Difference Method (Scarborough, 1966)
-def derivada(f, x, deltaa_x):
-    return (f(x + deltaa_x) - f(x - deltaa_x)) / (2 * deltaa_x)
+# Basadas en Central Difference Method (Scarborough, 1966)
+def derivada(f, x, delta_x):
+    """
+    Calcula la derivada numérica de una función f en el punto x utilizando el método de diferencia central.
 
-def segunda_derivada(f, x, deltaa_x):
-    return (f(x + deltaa_x) - 2 * f(x) + f(x - deltaa_x)) / (deltaa_x ** 2)
+    Args:
+    - f (function): Función para la cual se calcula la derivada.
+    - x (float): Punto en el cual se evalúa la derivada.
+    - delta_x (float): Incremento para calcular la derivada.
+
+    Returns:
+    - float: Valor de la derivada numérica en el punto x.
+    """
+    return (f(x + delta_x) - f(x - delta_x)) / (2 * delta_x)
+
+def segunda_derivada(f, x, delta_x):
+    """
+    Calcula la segunda derivada numérica de una función f en el punto x utilizando el método de diferencia central.
+
+    Args:
+    - f (function): Función para la cual se calcula la segunda derivada.
+    - x (float): Punto en el cual se evalúa la segunda derivada.
+    - delta_x (float): Incremento para calcular la segunda derivada.
+
+    Returns:
+    - float: Valor de la segunda derivada numérica en el punto x.
+    """
+    return (f(x + delta_x) - 2 * f(x) + f(x - delta_x)) / (delta_x ** 2)
 
 def delta_x(x):
+    """
+    Define el tamaño del paso delta_x basado en el valor absoluto de x.
+
+    Args:
+    - x (float): Valor para determinar el tamaño del paso delta_x.
+
+    Returns:
+    - float: Tamaño del paso delta_x.
+    """
     if abs(x) > 0.01:
         return 0.01 * abs(x)
     else:
         return 0.0001
 
-#Funciones 
+# Funciones específicas
 def caja(l):
+    """
+    Función que calcula la función específica para la forma de una caja.
+
+    Args:
+    - l (float): Longitud específica para evaluar la función.
+
+    Returns:
+    - float: Valor calculado para la función caja en el punto l.
+    """
     return -1*(4*(l)**3 - 60*(l)**2 + 200*l)
 
 def lata(r):
+    """
+    Función que calcula la función específica para la forma de una lata.
+
+    Args:
+    - r (float): Radio específico para evaluar la función.
+
+    Returns:
+    - float: Valor calculado para la función lata en el punto r.
+    """
     return 2 * np.pi * (r**2)  + 500/r
 
 def f1(x):
+    """
+    Función matemática f1(x) = x^2 + 54/x.
+
+    Args:
+    - x (float): Valor de entrada para evaluar la función f1.
+
+    Returns:
+    - float: Valor calculado para la función f1 en el punto x.
+    """
     return ((x)**2) + 54/x
 
 def f2(x):
+    """
+    Función matemática f2(x) = x^3 + 2*x - 3.
+
+    Args:
+    - x (float): Valor de entrada para evaluar la función f2.
+
+    Returns:
+    - float: Valor calculado para la función f2 en el punto x.
+    """
     return ((x)**3) + (2*(x)) - 3
 
 def f3(x):
+    """
+    Función matemática f3(x) = x^4 + x^2 - 33.
+
+    Args:
+    - x (float): Valor de entrada para evaluar la función f3.
+
+    Returns:
+    - float: Valor calculado para la función f3 en el punto x.
+    """
     return ((x)**4) + ((x)**2) - 33
 
 def f4(x):
+    """
+    Función matemática f4(x) = 3*x^4 - 8*x^3 - 6*x^2 + 12*x.
+
+    Args:
+    - x (float): Valor de entrada para evaluar la función f4.
+
+    Returns:
+    - float: Valor calculado para la función f4 en el punto x.
+    """
     return (3*((x)**4)) - (8*((x)**3)) - (6*((x)**2)) + 12*(x)
 
 #Arreglos con los límites generados para cada función
@@ -45,6 +141,19 @@ lim_f3 = linspace(-2.5, 2.5)
 lim_f4 = linspace(-1.5, 3)
 
 def secante(a, b, epsilon, f):
+    """
+    Implementación del método de la secante para encontrar la raíz de una función f en el intervalo [a, b].
+
+    Args:
+    - a (float): Extremo izquierdo del intervalo inicial.
+    - b (float): Extremo derecho del intervalo inicial.
+    - epsilon (float): Tolerancia o precisión deseada para la raíz encontrada.
+    - f (function): Función cuya raíz se busca.
+
+    Returns:
+    - float: Valor aproximado de la raíz de f en el intervalo [a, b].
+    """
+
     x1, x2 = a, b
     z = x2 - (derivada(f, x2, delta_x(x2)) / (derivada(f, x2, delta_x(x2)) - derivada(f, x1, delta_x(x1)) / (x2 - x1)))
     while abs(derivada(f, z, delta_x(z))) > epsilon: 

@@ -3,72 +3,290 @@ import matplotlib.pyplot as plt
 
 # Funciones ya definidas
 def rastrigin(x, y, A=10, n=2):
+    """
+    Función Rastrigin para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    - A (float, opcional): Parámetro A de la función. Por defecto es 10.
+    - n (float, opcional): Parámetro n de la función. Por defecto es 2.
+    
+    Returns:
+    - float: Valor de la función Rastrigin evaluada en (x, y).
+    """
     return A * n + (x**2 - A * np.cos(2 * np.pi * x)) + (y**2 - A * np.cos(2 * np.pi * y))
 
 def ackley(x, y, a=20, b=0.2, c=2*np.pi):
+    """
+    Función Ackley para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    - a (float, opcional): Parámetro a de la función. Por defecto es 20.
+    - b (float, opcional): Parámetro b de la función. Por defecto es 0.2.
+    - c (float, opcional): Parámetro c de la función. Por defecto es 2*pi.
+    
+    Returns:
+    - float: Valor de la función Ackley evaluada en (x, y).
+    """
     sum_sq_term = -b * np.sqrt(0.5 * (x**2 + y**2))
     cos_term = 0.5 * (np.cos(c * x) + np.cos(c * y))
     return -a * np.exp(sum_sq_term) - np.exp(cos_term) + a + np.exp(1)
 
 def sphere(x, y):
+    """
+    Función esférica para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función esférica evaluada en (x, y).
+    """
     return x**2 + y**2
 
 def rosenbrock(x, y, a=1, b=100):
+    """
+    Función de Rosenbrock para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    - a (float, opcional): Parámetro a de la función. Por defecto es 1.
+    - b (float, opcional): Parámetro b de la función. Por defecto es 100.
+    
+    Returns:
+    - float: Valor de la función de Rosenbrock evaluada en (x, y).
+    """
     return (a - x)**2 + b * (y - x**2)**2
 
 def beale(x, y):
+    """
+    Función de Beale para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función de Beale evaluada en (x, y).
+    """
     return (1.5 - x + x*y)**2 + (2.25 - x + x*y**2)**2 + (2.625 - x + x*y**3)**2
 
 def goldstein_price(x, y):
+    """
+    Función de Goldstein-Price para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función de Goldstein-Price evaluada en (x, y).
+    """
     part1 = (1 + (x + y + 1)**2 * (19 - 14*x + 3*x**2 - 14*y + 6*x*y + 3*y**2))
     part2 = (30 + (2*x - 3*y)**2 * (18 - 32*x + 12*x**2 + 48*y - 36*x*y + 27*y**2))
     return part1 * part2
 
 def booth(x, y):
+    """
+    Función de Booth para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función de Booth evaluada en (x, y).
+    """
     return (x + 2*y - 7)**2 + (2*x + y - 5)**2
 
 def bukin_n6(x, y):
+    """
+    Función de Bukin N.6 para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función de Bukin N.6 evaluada en (x, y).
+    """
     return 100 * np.sqrt(np.abs(y - 0.01*x**2)) + 0.01 * np.abs(x + 10)
 
 def matyas(x, y):
+    """
+    Función de Matyas para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función de Matyas evaluada en (x, y).
+    """
     return 0.26 * (x**2 + y**2) - 0.48 * x * y
 
 def levi_n13(x, y):
+    """
+    Función de Levi N.13 para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función de Levi N.13 evaluada en (x, y).
+    """
     return np.sin(3 * np.pi * x)**2 + ((x - 1)**2) * (1 + np.sin(3 * np.pi * y)**2) + ((y - 1)**2) * (1 + np.sin(2 * np.pi * y)**2)
 
 def himmelblau(x, y):
+    """
+    Función de Himmelblau para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función de Himmelblau evaluada en (x, y).
+    """
     return (x**2 + y - 11)**2 + (x + y**2 - 7)**2
 
 def three_hump_camel(x, y):
+    """
+    Función Three-Hump Camel para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la Three-Hump Camel evaluada en (x, y).
+    """
     return 2*x**2 - 1.05*x**4 + (x**6) / 6 + x*y + y**2
 
 # Nuevas funciones
 def easom(x, y):
+    """
+    Función de Easom para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función de Easom evaluada en (x, y).
+    """
     return -np.cos(x) * np.cos(y) * np.exp(-((x - np.pi)**2 + (y - np.pi)**2))
 
 def cross_in_tray(x, y):
+    """
+    Función Cross-in-Tray para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función Cross-in-Tray evaluada en (x, y).
+    """
     return -0.0001 * (np.abs(np.sin(x) * np.sin(y) * np.exp(np.abs(100 - np.sqrt(x**2 + y**2) / np.pi))) + 1) ** 0.1
 
 def eggholder(x, y):
+    """
+    Función Eggholder para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función Eggholder evaluada en (x, y).
+    """
     return -(y + 47) * np.sin(np.sqrt(np.abs(x / 2 + (y + 47)))) - x * np.sin(np.sqrt(np.abs(x - (y + 47))))
 
 def holder_table(x, y):
+    """
+    Función Holder Table para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función Holder Table evaluada en (x, y).
+    """
     return -np.abs(np.sin(x) * np.cos(y) * np.exp(np.abs(1 - np.sqrt(x**2 + y**2) / np.pi)))
 
 def mccormick(x, y):
+    """
+    Función McCormick para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función McCormick evaluada en (x, y).
+    """
     return np.sin(x + y) + (x - y)**2 - 1.5 * x + 2.5 * y + 1
 
 def schaffer_n2(x, y):
+    """
+    Función Schaffer N.2 para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función Schaffer N.2 evaluada en (x, y).
+    """
     return 0.5 + (np.sin(x**2 - y**2)**2 - 0.5) / (1 + 0.001 * (x**2 + y**2))**2
 
 def schaffer_n4(x, y):
+    """
+    Función Schaffer N.4 para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función Schaffer N.4 evaluada en (x, y).
+    """
     return 0.5 + (np.cos(np.sin(np.abs(x**2 - y**2))))**2 - 0.5 / (1 + 0.001 * (x**2 + y**2))**2
 
 def styblinski_tang(x, y):
+    """
+    Función Styblinski-Tang para dos variables.
+    
+    Args:
+    - x (float): Valor de la primera variable.
+    - y (float): Valor de la segunda variable.
+    
+    Returns:
+    - float: Valor de la función Styblinski-Tang evaluada en (x, y).
+    """
     return (x**4 - 16 * x**2 + 5 * x + y**4 - 16 * y**2 + 5 * y) / 2
 
 # Cálculo de Z 
 def calculo_z(func, x, y):
+    """
+    Calcula la matriz Z para una función dada sobre una malla de coordenadas X, Y.
+    
+    Args:
+    - func (function): Función de dos variables a evaluar.
+    - x (numpy.ndarray): Matriz de coordenadas X.
+    - y (numpy.ndarray): Matriz de coordenadas Y.
+    
+    Returns:
+    - numpy.ndarray: Matriz Z con los valores calculados de la función para cada par de coordenadas (x, y).
+    """
     z = np.zeros(x.shape)
     for i in range(x.shape[0]):
         for j in range(x.shape[1]):

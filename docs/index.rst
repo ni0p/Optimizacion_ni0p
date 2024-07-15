@@ -1,17 +1,16 @@
-.. Optimizacion_ni0p documentation master file, created by
-   sphinx-quickstart on Sun Jul 14 01:22:56 2024.
+.. Optimizacioon documentation master file, created by
+   sphinx-quickstart on Mon Jul 15 02:09:37 2024.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Optimizacion_ni0p's documentation!
-=============================================
+Welcome to Optimizacioon's documentation!
+=========================================
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
-
-   Optimizacion-ni0p
+   Optimizacioon
 
 
 

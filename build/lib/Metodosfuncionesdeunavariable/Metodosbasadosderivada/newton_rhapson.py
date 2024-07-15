@@ -2,41 +2,137 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 def linspace(start, stop, step=0.05):
+    """
+    Genera una secuencia de números igualmente espaciados en un intervalo especificado.
+
+    Parámetros:
+    start (float): El valor inicial del intervalo.
+    stop (float): El valor final del intervalo.
+    step (float, opcional): El tamaño del paso entre valores consecutivos. El valor predeterminado es 0.05.
+
+    Retorna:
+    numpy.ndarray: Un array de valores igualmente espaciados.
+    """
     return np.linspace(start, stop, int((stop - start) / step + 1))
 
-#Basadas en Central Difference Method (Scarborough, 1966)
+# Basadas en Central Difference Method (Scarborough, 1966)
 def derivada(f, x, deltaa_x):
+    """
+    Calcula la derivada de una función en un punto utilizando el método de diferencias centrales.
+
+    Parámetros:
+    f (función): La función de la cual se desea calcular la derivada.
+    x (float): El punto en el cual se calcula la derivada.
+    deltaa_x (float): Un pequeño cambio en x.
+
+    Retorna:
+    float: La derivada de f en x.
+    """
     return (f(x + deltaa_x) - f(x - deltaa_x)) / (2 * deltaa_x)
 
 def segunda_derivada(f, x, deltaa_x):
+    """
+    Calcula la segunda derivada de una función en un punto utilizando el método de diferencias centrales.
+
+    Parámetros:
+    f (función): La función de la cual se desea calcular la segunda derivada.
+    x (float): El punto en el cual se calcula la segunda derivada.
+    deltaa_x (float): Un pequeño cambio en x.
+
+    Retorna:
+    float: La segunda derivada de f en x.
+    """
     return (f(x + deltaa_x) - 2 * f(x) + f(x - deltaa_x)) / (deltaa_x ** 2)
 
 def delta_x(x):
+    """
+    Calcula un pequeño cambio en x basado en su valor absoluto.
+
+    Parámetros:
+    x (float): El valor de x.
+
+    Retorna:
+    float: Un pequeño cambio en x.
+    """
     if abs(x) > 0.01:
         return 0.01 * abs(x)
     else:
         return 0.0001
 
-#Funciones 
+# Funciones 
 def caja(l):
+    """
+    Calcula el valor de la función caja en un punto dado.
+
+    Parámetros:
+    l (float): El valor de l.
+
+    Retorna:
+    float: El valor de la función caja en l.
+    """
     return -1*(4*(l)**3 - 60*(l)**2 + 200*l)
 
 def lata(r):
+    """
+    Calcula el valor de la función lata en un punto dado.
+
+    Parámetros:
+    r (float): El valor de r.
+
+    Retorna:
+    float: El valor de la función lata en r.
+    """
     return 2 * np.pi * (r**2)  + 500/r
 
 def f1(x):
+    """
+    Calcula el valor de la función f1 en un punto dado.
+
+    Parámetros:
+    x (float): El valor de x.
+
+    Retorna:
+    float: El valor de la función f1 en x.
+    """
     return ((x)**2) + 54/x
 
 def f2(x):
+    """
+    Calcula el valor de la función f2 en un punto dado.
+
+    Parámetros:
+    x (float): El valor de x.
+
+    Retorna:
+    float: El valor de la función f2 en x.
+    """
     return ((x)**3) + (2*(x)) - 3
 
 def f3(x):
+    """
+    Calcula el valor de la función f3 en un punto dado.
+
+    Parámetros:
+    x (float): El valor de x.
+
+    Retorna:
+    float: El valor de la función f3 en x.
+    """
     return ((x)**4) + ((x)**2) - 33
 
 def f4(x):
+    """
+    Calcula el valor de la función f4 en un punto dado.
+
+    Parámetros:
+    x (float): El valor de x.
+
+    Retorna:
+    float: El valor de la función f4 en x.
+    """
     return (3*((x)**4)) - (8*((x)**3)) - (6*((x)**2)) + 12*(x)
 
-#Arreglos con los límites generados para cada función
+# Arreglos con los límites generados para cada función
 lim_lata = linspace(0.5, 8)
 lim_caja = linspace(2, 3)
 lim_f1 = linspace(0, 10)
@@ -45,6 +141,17 @@ lim_f3 = linspace(-2.5, 2.5)
 lim_f4 = linspace(-1.5, 3)
 
 def newton_method(x0, epsilon, f):
+    """
+    Encuentra una raíz de una función utilizando el método de Newton-Raphson.
+
+    Parámetros:
+    x0 (float): El valor inicial para la iteración.
+    epsilon (float): El criterio de convergencia.
+    f (función): La función de la cual se desea encontrar la raíz.
+
+    Retorna:
+    float: La raíz aproximada de la función.
+    """
     x = x0
     while abs(derivada(f, x, delta_x(x))) > epsilon:
         segunda_deriv = segunda_derivada(f, x, delta_x(x))
@@ -53,7 +160,7 @@ def newton_method(x0, epsilon, f):
         x = x - derivada(f, x, delta_x(x)) / segunda_deriv
     return x
 
-print(newton_method(0.6, 0.5,f1))
+print(newton_method(0.6, 0.5, f1))
 
 # Calcular puntos para cada función
 puntos_lata1 = newton_method(0.6, 0.5, lata)
@@ -81,12 +188,12 @@ puntos_f24 = newton_method(0.6, 0.0001, f2)
 puntos_f31 = newton_method(-2, 0.5, f3)
 puntos_f32 = newton_method(-2, 0.1, f3)
 puntos_f33 = newton_method(-2, 0.01, f3)
-puntos_f34 = newton_method(-2, 0.0001,f3)
+puntos_f34 = newton_method(-2, 0.0001, f3)
 
 puntos_f41 = newton_method(-1.8, 0.5, f4)
 puntos_f42 = newton_method(-1.8, 0.1, f4)
-puntos_f43 = newton_method(-1.8, 0.01,f4)
-puntos_f44 = newton_method(-1.8, 0.0001,f4)
+puntos_f43 = newton_method(-1.8, 0.01, f4)
+puntos_f44 = newton_method(-1.8, 0.0001, f4)
 
 # Grafica resultados
 plt.figure(figsize=(12, 8))
@@ -110,7 +217,9 @@ plt.plot(lim_caja, caja(lim_caja), label='Función')
 plt.scatter(puntos_caja1, caja(puntos_caja1), label='Delta=0.5', marker='o')
 plt.scatter(puntos_caja2, caja(puntos_caja2), label='Delta=0.1', marker='o')
 plt.scatter(puntos_caja3, caja(puntos_caja3), label='Delta=0.01', marker='o')
-plt.scatter(puntos_caja4, caja(puntos_caja4), label='Delta=0.0001', marker='o')
+plt.scatter(puntos_caja4
+
+, caja(puntos_caja4), label='Delta=0.0001', marker='o')
 plt.xlabel('Valores de x')
 plt.ylabel('Valores de y')
 plt.title('Función Caja')

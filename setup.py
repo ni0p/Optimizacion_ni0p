@@ -8,7 +8,7 @@ LONG_DESCRIPTION = 'Paquete que incluye todos los algoritmos vistos en la materi
 setup(
        # el nombre debe coincidir con el nombre de la carpeta 	  
        #'modulomuysimple'
-        name="Optimizacion-ni0p", 
+        name="Paquete-Optimizacioon", 
         version=VERSION,
         author="Norma Jimenez",
         author_email="<ux21ii004@gmail.com>",
@@ -18,7 +18,7 @@ setup(
         install_requires=[], # añade cualquier paquete adicional que debe ser
         #instalado junto con tu paquete. Ej: 'caer'
         
-        keywords=['python', 'paquete optimizacion', 'pryecto final'],
+        keywords=['python', 'paquete optimizacion', 'proyecto final'],
         classifiers= [
             "Development Status :: 3 - Alpha",
             "Intended Audience :: Education",

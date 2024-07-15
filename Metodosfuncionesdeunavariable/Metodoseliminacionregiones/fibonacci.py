@@ -1,26 +1,107 @@
 import numpy as np
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
 def linspace(start, stop, step=0.05):
+    """
+    Genera un arreglo de números espaciados uniformemente dentro de un intervalo.
+
+    Parameters:
+    start : float
+        Valor inicial del intervalo.
+    stop : float
+        Valor final del intervalo.
+    step : float, optional
+        Paso entre cada número en el arreglo (por defecto es 0.05).
+
+    Returns:
+    numpy.ndarray
+        Arreglo NumPy con los números espaciados.
+    """
     return np.linspace(start, stop, int((stop - start) / step + 1))
 
 def caja(l):
-    return -1*(4*(l)**3 - 60*(l)**2 + 200*l)
+    """
+    Calcula el volumen de una caja en función de su lado l.
+
+    Parameters:
+    l : float
+        Longitud del lado de la caja.
+
+    Returns:
+    float
+        Volumen de la caja calculado.
+    """
+    return -1 * (4 * (l)**3 - 60 * (l)**2 + 200 * l)
 
 def lata(r):
-    return 2 * np.pi * (r**2)  + 500/r
+    """
+    Calcula el área de superficie de una lata en función de su radio r.
+
+    Parameters:
+    r : float
+        Radio de la lata.
+
+    Returns:
+    float
+        Área de superficie de la lata calculada.
+    """
+    return 2 * np.pi * (r**2) + 500 / r
 
 def f1(x):
-    return ((x)**2) + 54/x
+    """
+    Evalúa la función x^2 + 54/x.
+
+    Parameters:
+    x : float
+        Valor para evaluar la función.
+
+    Returns:
+    float
+        Valor calculado de la función.
+    """
+    return (x)**2 + 54 / x
 
 def f2(x):
-    return ((x)**3) + (2*(x)) - 3
+    """
+    Evalúa la función x^3 + 2x - 3.
+
+    Parameters:
+    x : float
+        Valor para evaluar la función.
+
+    Returns:
+    float
+        Valor calculado de la función.
+    """
+    return (x)**3 + 2 * (x) - 3
 
 def f3(x):
-    return ((x)**4) + ((x)**2) - 33
+    """
+    Evalúa la función x^4 + x^2 - 33.
+
+    Parameters:
+    x : float
+        Valor para evaluar la función.
+
+    Returns:
+    float
+        Valor calculado de la función.
+    """
+    return (x)**4 + (x)**2 - 33
 
 def f4(x):
-    return (3*((x)**4)) - (8*((x)**3)) - (6*((x)**2)) + 12*(x)
+    """
+    Evalúa la función 3x^4 - 8x^3 - 6x^2 + 12x.
+
+    Parameters:
+    x : float
+        Valor para evaluar la función.
+
+    Returns:
+    float
+        Valor calculado de la función.
+    """
+    return 3 * ((x)**4) - 8 * ((x)**3) - 6 * ((x)**2) + 12 * (x)
 
 #Arreglos con los límites generados para cada función
 lim_lata = linspace(0.5, 8)
@@ -30,14 +111,43 @@ lim_f2 = linspace(0, 5)
 lim_f3 = linspace(-2.5, 2.5)
 lim_f4 = linspace(-1.5, 3)
 
-# Genera los primeros n números de Fibonacci
 def fibonacci(n):
+    """
+    Genera los primeros n números de Fibonacci.
+
+    Parameters:
+    n : int
+        Número de términos de Fibonacci a generar.
+
+    Returns:
+    list
+        Lista con los primeros n números de Fibonacci.
+    """
     fib = [0, 1]
     for i in range(2, n+1):
         fib.append(fib[-1] + fib[-2])
     return fib
 
 def fibonacci_search(a, b, n, precision, f):
+    """
+    Realiza una búsqueda utilizando el método de la búsqueda de Fibonacci para encontrar el mínimo de una función f en el intervalo [a, b].
+
+    Parameters:
+    a : float
+        Extremo izquierdo del intervalo inicial.
+    b : float
+        Extremo derecho del intervalo inicial.
+    n : int
+        Número de términos de Fibonacci a usar.
+    precision : float
+        Precisión deseada para la solución.
+    f : function
+        Función a minimizar.
+
+    Returns:
+    tuple
+        Tupla con los dos últimos valores calculados de x que se aproximaron al mínimo de la función f.
+    """
     fib = fibonacci(n)  # Generar los números de Fibonacci hasta n
     k = 2
     L = b - a

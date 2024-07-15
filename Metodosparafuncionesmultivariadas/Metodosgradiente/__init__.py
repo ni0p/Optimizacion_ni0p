@@ -1,4 +1,5 @@
 #Metodos de gradiente
-from Metodosgradiente.cauchy import cauchy
-from Metodosgradiente.gradiente_conjugado import gradiente
-from Metodosgradiente.newton import newton
+from .cauchy import regla_eliminacion, w_to_x, busquedaDorada, gradiente, cauchy
+from diferenciacentralgradiente import f, primera_derivada, segunda_derivada
+from .gradiente_conjugado import gradiente, regla_eliminacion, w_to_x, busquedaDorada, gradiente_conjugado
+from .newton import regla_eliminacion, w_to_x, busquedaDorada, gradiente, hessian_matrix, newton

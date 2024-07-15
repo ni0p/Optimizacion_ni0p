@@ -1,28 +1,109 @@
 import numpy as np
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
 def linspace(start, stop, step=0.05):
+    """
+    Genera un arreglo de números espaciados uniformemente dentro del intervalo [start, stop].
+    
+    Parámetros:
+    start : float
+        Valor inicial del arreglo.
+    stop : float
+        Valor final del arreglo.
+    step : float, opcional
+        Paso entre los valores del arreglo (por defecto 0.05).
+        
+    Retorna:
+    numpy.ndarray
+        Arreglo de números espaciados uniformemente.
+    """
     return np.linspace(start, stop, int((stop - start) / step + 1))
 
 def caja(l):
+    """
+    Calcula el valor de la función caja dada.
+    
+    Parámetros:
+    l : float
+        Longitud o parámetro de la función caja.
+        
+    Retorna:
+    float
+        Valor calculado de la función caja para el parámetro dado l.
+    """
     return -1*(4*(l)**3 - 60*(l)**2 + 200*l)
 
 def lata(r):
+    """
+    Calcula el valor de la función lata dada.
+    
+    Parámetros:
+    r : float
+        Radio o parámetro de la función lata.
+        
+    Retorna:
+    float
+        Valor calculado de la función lata para el radio dado r.
+    """
     return 2 * np.pi * (r**2)  + 500/r
 
 def f1(x):
+    """
+    Calcula el valor de la función f1 dada.
+    
+    Parámetros:
+    x : float
+        Valor de entrada para la función f1.
+        
+    Retorna:
+    float
+        Valor calculado de la función f1 para el valor dado x.
+    """
     return ((x)**2) + 54/x
 
 def f2(x):
+    """
+    Calcula el valor de la función f2 dada.
+    
+    Parámetros:
+    x : float
+        Valor de entrada para la función f2.
+        
+    Retorna:
+    float
+        Valor calculado de la función f2 para el valor dado x.
+    """
     return ((x)**3) + (2*(x)) - 3
 
 def f3(x):
+    """
+    Calcula el valor de la función f3 dada.
+    
+    Parámetros:
+    x : float
+        Valor de entrada para la función f3.
+        
+    Retorna:
+    float
+        Valor calculado de la función f3 para el valor dado x.
+    """
     return ((x)**4) + ((x)**2) - 33
 
 def f4(x):
+    """
+    Calcula el valor de la función f4 dada.
+    
+    Parámetros:
+    x : float
+        Valor de entrada para la función f4.
+        
+    Retorna:
+    float
+        Valor calculado de la función f4 para el valor dado x.
+    """
     return (3*((x)**4)) - (8*((x)**3)) - (6*((x)**2)) + 12*(x)
 
-#Arreglos con los límites generados para cada función
+# Arreglos con los límites generados para cada función
 lim_lata = linspace(0.5, 8)
 lim_caja = linspace(2, 3)
 lim_f1 = linspace(0, 10)
@@ -31,6 +112,24 @@ lim_f3 = linspace(-2.5, 2.5)
 lim_f4 = linspace(-1.5, 3)
 
 def golden_search(a, b, epsilon, f):
+    """
+    Realiza una búsqueda para encontrar el mínimo de una función f dentro del intervalo [a, b]
+    usando el método de la búsqueda de sección dorada.
+    
+    Parámetros:
+    a : float
+        Extremo izquierdo del intervalo de búsqueda.
+    b : float
+        Extremo derecho del intervalo de búsqueda.
+    epsilon : float
+        Precisión deseada para la aproximación del mínimo.
+    f : function
+        Función objetivo que se desea minimizar.
+        
+    Retorna:
+    float, float
+        Extremos del intervalo [a, b] que contienen al mínimo aproximado de la función f.
+    """
     aw = 0
     bw = 1
     Lw = bw - aw

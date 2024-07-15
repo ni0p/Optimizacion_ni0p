@@ -1,28 +1,93 @@
 import numpy as np
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
 def linspace(start, stop, step=0.05):
+    """
+    Genera un array de números equidistantes entre start y stop con un tamaño de paso especificado.
+
+    Parámetros:
+    start (float): El valor inicial de la secuencia.
+    stop (float): El valor final de la secuencia.
+    step (float): El tamaño del paso entre valores consecutivos. Por defecto es 0.05.
+
+    Retorna:
+    numpy.ndarray: Array de números equidistantes.
+    """
     return np.linspace(start, stop, int((stop - start) / step + 1))
 
 def caja(l):
-    return -1*(4*(l)**3 - 60*(l)**2 + 200*l)
+    """
+    Calcula el volumen de una caja en función de su longitud.
+
+    Parámetros:
+    l (float): La longitud de la caja.
+
+    Retorna:
+    float: El volumen calculado de la caja.
+    """
+    return -1 * (4 * (l)**3 - 60 * (l)**2 + 200 * l)
 
 def lata(r):
-    return 2 * np.pi * (r**2)  + 500/r
+    """
+    Calcula el área superficial de una lata en función de su radio.
+
+    Parámetros:
+    r (float): El radio de la lata.
+
+    Retorna:
+    float: El área superficial calculada de la lata.
+    """
+    return 2 * np.pi * (r**2) + 500 / r
 
 def f1(x):
-    return ((x)**2) + 54/x
+    """
+    Calcula el valor de la función f1 en el punto x.
+
+    Parámetros:
+    x (float): El valor en el que se evalúa la función.
+
+    Retorna:
+    float: El valor calculado de la función.
+    """
+    return (x**2) + 54 / x
 
 def f2(x):
-    return ((x)**3) + (2*(x)) - 3
+    """
+    Calcula el valor de la función f2 en el punto x.
+
+    Parámetros:
+    x (float): El valor en el que se evalúa la función.
+
+    Retorna:
+    float: El valor calculado de la función.
+    """
+    return (x**3) + (2 * x) - 3
 
 def f3(x):
-    return ((x)**4) + ((x)**2) - 33
+    """
+    Calcula el valor de la función f3 en el punto x.
+
+    Parámetros:
+    x (float): El valor en el que se evalúa la función.
+
+    Retorna:
+    float: El valor calculado de la función.
+    """
+    return (x**4) + (x**2) - 33
 
 def f4(x):
-    return (3*((x)**4)) - (8*((x)**3)) - (6*((x)**2)) + 12*(x)
+    """
+    Calcula el valor de la función f4 en el punto x.
 
-#Arreglos con los límites generados para cada función
+    Parámetros:
+    x (float): El valor en el que se evalúa la función.
+
+    Retorna:
+    float: El valor calculado de la función.
+    """
+    return (3 * (x**4)) - (8 * (x**3)) - (6 * (x**2)) + 12 * x
+
+# Arreglos con los límites generados para cada función
 lim_lata = linspace(0.5, 8)
 lim_caja = linspace(2, 3)
 lim_f1 = linspace(0, 10)
@@ -31,6 +96,18 @@ lim_f3 = linspace(-2.5, 2.5)
 lim_f4 = linspace(-1.5, 3)
 
 def interval_halving(a, b, epsilon, f):
+    """
+    Implementa el método de bisección de intervalos para encontrar el mínimo de una función.
+
+    Parámetros:
+    a (float): El límite inferior del intervalo.
+    b (float): El límite superior del intervalo.
+    epsilon (float): La precisión deseada para la ubicación del mínimo.
+    f (function): La función a minimizar.
+
+    Retorna:
+    tuple: Una tupla que contiene el punto estimado del mínimo y el punto anterior.
+    """
     L = b - a
     xm = (a + b) / 2
     f_xm = f(xm)
@@ -59,7 +136,7 @@ def interval_halving(a, b, epsilon, f):
 
     return (xm, x_ant)  # Devolvemos tanto xm como el valor anterior x_ant
 
-print(interval_halving(0.6,5, 0.5,lata))
+print(interval_halving(0.6, 5, 0.5, lata))
 
 # Calcular puntos para cada función
 puntos_lata1 = interval_halving(0.6, 5, 0.5, lata)
@@ -78,19 +155,19 @@ puntos_f13 = interval_halving(0.6, 5, 0.01, f1)
 puntos_f14 = interval_halving(0.6, 5, 0.0001, f1)
 
 puntos_f21 = interval_halving(0.6, 5, 0.5, f2)
-puntos_f22 = interval_halving(0.6, 5,  0.1, f2)
+puntos_f22 = interval_halving(0.6, 5, 0.1, f2)
 puntos_f23 = interval_halving(0.6, 5, 0.01, f2)
 puntos_f24 = interval_halving(0.6, 5, 0.0001, f2)
 
 puntos_f31 = interval_halving(-2, 2.5, 0.5, f3)
 puntos_f32 = interval_halving(-2, 2.5, 0.1, f3)
 puntos_f33 = interval_halving(-2, 2.5, 0.01, f3)
-puntos_f34 = interval_halving(-2, 2.5, 0.0001,f3)
+puntos_f34 = interval_halving(-2, 2.5, 0.0001, f3)
 
 puntos_f41 = interval_halving(-1.8, 2.5, 0.5, f4)
 puntos_f42 = interval_halving(-1.8, 2.5, 0.1, f4)
-puntos_f43 = interval_halving(-1.8, 2.5, 0.01,f4)
-puntos_f44 = interval_halving(-1.8, 2.5, 0.0001,f4)
+puntos_f43 = interval_halving(-1.8, 2.5, 0.01, f4)
+puntos_f44 = interval_halving(-1.8, 2.5, 0.0001, f4)
 
 # Grafica resultados
 plt.figure(figsize=(12, 8))
@@ -122,7 +199,9 @@ plt.legend()
 plt.grid(True)
 
 # Grafica función f1
-plt.subplot(233)
+plt.subplot
+
+(233)
 plt.plot(lim_f1, f1(lim_f1), label='Función')
 plt.scatter(puntos_f11[1], f1(puntos_f11[1]), label='Delta=0.5', marker='o')
 plt.scatter(puntos_f12[1], f1(puntos_f12[1]), label='Delta=0.1', marker='o')

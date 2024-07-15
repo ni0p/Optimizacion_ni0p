@@ -1,42 +1,138 @@
 import numpy as np
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 
 def linspace(start, stop, step=0.05):
+    """
+    Genera una secuencia de números espaciados uniformemente.
+
+    Args:
+        start (float): El valor inicial de la secuencia.
+        stop (float): El valor final de la secuencia.
+        step (float, opcional): El tamaño del paso entre los valores. Por defecto es 0.05.
+
+    Returns:
+        np.ndarray: Una matriz de valores espaciados uniformemente.
+    """
     return np.linspace(start, stop, int((stop - start) / step + 1))
 
-#Basadas en Central Difference Method (Scarborough, 1966)
+# Basadas en Central Difference Method (Scarborough, 1966)
 def derivada(f, x, deltaa_x):
+    """
+    Calcula la derivada de una función en un punto dado utilizando el método de diferencias centrales.
+
+    Args:
+        f (function): La función de la cual se desea calcular la derivada.
+        x (float): El punto en el cual se desea calcular la derivada.
+        deltaa_x (float): Un pequeño incremento en x para calcular la diferencia.
+
+    Returns:
+        float: La derivada de la función en el punto dado.
+    """
     return (f(x + deltaa_x) - f(x - deltaa_x)) / (2 * deltaa_x)
 
 def segunda_derivada(f, x, deltaa_x):
+    """
+    Calcula la segunda derivada de una función en un punto dado utilizando el método de diferencias centrales.
+
+    Args:
+        f (function): La función de la cual se desea calcular la segunda derivada.
+        x (float): El punto en el cual se desea calcular la segunda derivada.
+        deltaa_x (float): Un pequeño incremento en x para calcular la diferencia.
+
+    Returns:
+        float: La segunda derivada de la función en el punto dado.
+    """
     return (f(x + deltaa_x) - 2 * f(x) + f(x - deltaa_x)) / (deltaa_x ** 2)
 
 def delta_x(x):
+    """
+    Calcula un pequeño incremento basado en el valor absoluto de x.
+
+    Args:
+        x (float): El valor en el cual se basa el incremento.
+
+    Returns:
+        float: El pequeño incremento calculado.
+    """
     if abs(x) > 0.01:
         return 0.01 * abs(x)
     else:
         return 0.0001
 
-#Funciones 
+# Funciones 
 def caja(l):
+    """
+    Calcula el volumen de una caja en función de la longitud de su lado.
+
+    Args:
+        l (float): La longitud del lado de la caja.
+
+    Returns:
+        float: El volumen de la caja.
+    """
     return -1*(4*(l)**3 - 60*(l)**2 + 200*l)
 
 def lata(r):
+    """
+    Calcula el área de superficie de una lata en función de su radio.
+
+    Args:
+        r (float): El radio de la lata.
+
+    Returns:
+        float: El área de superficie de la lata.
+    """
     return 2 * np.pi * (r**2)  + 500/r
 
 def f1(x):
+    """
+    Función matemática f1.
+
+    Args:
+        x (float): Variable independiente.
+
+    Returns:
+        float: Valor de la función f1.
+    """
     return ((x)**2) + 54/x
 
 def f2(x):
+    """
+    Función matemática f2.
+
+    Args:
+        x (float): Variable independiente.
+
+    Returns:
+        float: Valor de la función f2.
+    """
     return ((x)**3) + (2*(x)) - 3
 
 def f3(x):
+    """
+    Función matemática f3.
+
+    Args:
+        x (float): Variable independiente.
+
+    Returns:
+        float: Valor de la función f3.
+    """
     return ((x)**4) + ((x)**2) - 33
 
 def f4(x):
+    """
+    Función matemática f4.
+
+    Args:
+        x (float): Variable independiente.
+
+    Returns:
+        float: Valor de la función f4.
+    """
     return (3*((x)**4)) - (8*((x)**3)) - (6*((x)**2)) + 12*(x)
 
-#Arreglos con los límites generados para cada función
+# Arreglos con los límites generados para cada función
 lim_lata = linspace(0.5, 8)
 lim_caja = linspace(2, 3)
 lim_f1 = linspace(0, 10)
@@ -45,6 +141,18 @@ lim_f3 = linspace(-2.5, 2.5)
 lim_f4 = linspace(-1.5, 3)
 
 def biseccion(a, b, epsilon, f):
+    """
+    Encuentra una raíz de una función utilizando el método de bisección.
+
+    Args:
+        a (float): Límite inferior del intervalo.
+        b (float): Límite superior del intervalo.
+        epsilon (float): Precisión deseada.
+        f (function): La función de la cual se desea encontrar la raíz.
+
+    Returns:
+        float: Aproximación de la raíz de la función.
+    """
     x1, x2 = a, b
     z = (x1 + x2) / 2  
     while abs(derivada(f, z, delta_x(z) )) > epsilon: 

@@ -1,35 +1,115 @@
-import numpy  as np
+import numpy as np
 import matplotlib.pyplot as plt
 
 # --------------------------------- FUNCIONES ---------------------------------
+
 def caja(l):
+    """
+    Calcula el volumen de una caja con un valor dado de lado l.
+
+    Args:
+        l (float): Longitud del lado de la caja.
+
+    Returns:
+        float: Volumen de la caja.
+    """
     return 4*(l)**3 - 60*(l)**2 + 200*l
 
 def lata(r):
-    return 2 * np.pi * (r**2)  + 500/r
+    """
+    Calcula el área de una lata con un radio dado r.
+
+    Args:
+        r (float): Radio de la lata.
+
+    Returns:
+        float: Área de la lata.
+    """
+    return 2 * np.pi * (r**2) + 500/r
 
 def fun1(x):
-    return ((x**2) +  54)/x
+    """
+    Calcula el valor de la función (x^2 + 54) / x.
+
+    Args:
+        x (float): Valor de x.
+
+    Returns:
+        float: Resultado de la función.
+    """
+    return ((x**2) + 54)/x
 
 def fun2(x):
+    """
+    Calcula el valor de la función x^3 + 2x - 3.
+
+    Args:
+        x (float): Valor de x.
+
+    Returns:
+        float: Resultado de la función.
+    """
     return (x**3) + (2*x) - (3)
 
 def fun3(x):
+    """
+    Calcula el valor de la función x^4 + x*2 - 33.
+
+    Args:
+        x (float): Valor de x.
+
+    Returns:
+        float: Resultado de la función.
+    """
     return (x**4) + (x*2) - 33
 
 def fun4(x):
+    """
+    Calcula el valor de la función 3*x^4 - 8*x^3 - 6*x^2 + 12*x.
+
+    Args:
+        x (float): Valor de x.
+
+    Returns:
+        float: Resultado de la función.
+    """
     return (3*(x**4)) - (8*(x**3)) - (6*(x**2)) + (12*x)
 
 def calcular_n(a, b, precision):
+    """
+    Calcula el número de intervalos necesarios para una búsqueda exhaustiva
+    en el rango [a, b] con una precisión dada.
+
+    Args:
+        a (float): Límite inferior del rango.
+        b (float): Límite superior del rango.
+        precision (float): Precisión deseada.
+
+    Returns:
+        int: Número de intervalos.
+    """
     return int((b - a) / precision)
 
 def exhaustive_search(a, b, precision, funcion):
+    """
+    Realiza una búsqueda exhaustiva para encontrar el mínimo de una función
+    en un rango [a, b] con una precisión dada.
+
+    Args:
+        a (float): Límite inferior del rango.
+        b (float): Límite superior del rango.
+        precision (float): Precisión deseada.
+        funcion (callable): Función a evaluar.
+
+    Returns:
+        tuple: El intervalo que contiene el mínimo y los puntos evaluados.
+    """
     n = calcular_n(a, b, precision)
-    delta_x = (b - a) / n # precision
+    delta_x = (b - a) / n
     x1 = a
     x2 = x1 + delta_x
     x3 = x2 + delta_x
-    puntos = [] # puntos evaluados
+    puntos = []  # puntos evaluados
     while x3 <= b:
         if funcion(x1) >= funcion(x2) <= funcion(x3):
             return (x1, x3), puntos
@@ -41,6 +121,22 @@ def exhaustive_search(a, b, precision, funcion):
     return None, puntos
 
 def graficar(precisiones, x, y, a, b, nombre_funcion, funcion):
+    """
+    Grafica una función en un rango [a, b] y los puntos evaluados en una 
+    búsqueda exhaustiva para diferentes precisiones.
+
+    Args:
+        precisiones (list): Lista de precisiones a utilizar en la búsqueda exhaustiva.
+        x (array-like): Valores de x para graficar la función.
+        y (array-like): Valores de y para graficar la función.
+        a (float): Límite inferior del rango.
+        b (float): Límite superior del rango.
+        nombre_funcion (str): Nombre de la función a graficar.
+        funcion (callable): Función a evaluar.
+
+    Returns:
+        None
+    """
     plt.plot(x, y, label='Función {}'.format(nombre_funcion))
 
     # Graficar los puntos devueltos por exhaustive_search para cada precisión
@@ -53,7 +149,7 @@ def graficar(precisiones, x, y, a, b, nombre_funcion, funcion):
     # Configuraciones adicionales
     plt.xlabel('x')
     plt.ylabel('f(x)')
-    plt.title('Búsqueda Exhaustiva - {}'. format(nombre_funcion))
+    plt.title('Búsqueda Exhaustiva - {}'.format(nombre_funcion))
     plt.legend()
     plt.grid(True)
     plt.show()
